@@ -20,9 +20,9 @@ public class serveur {
 		
 		String    received  = new String(packetData, StandardCharsets.US_ASCII);
 		String [] message   = received.split("/");
-		System.out.println(message[0]);
+		//System.out.println(message[0]);
 		
-		Comm c1 = new Comm(packetAdress, 2000);
+		Comm c1 = new Comm(packetAdress, 1085);
 		c1.start();
 		/*(new Comm(packetAdress,packetPort)).start();*/
 	}

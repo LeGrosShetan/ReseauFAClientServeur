@@ -21,11 +21,14 @@ public class Comm extends Thread{
 		try {
 			DatagramSocket ds = new DatagramSocket();
 			
-			String         message = "Hello Markiplier, my name is JackSepticeye/";
+			System.out.println("Nouveau Client : " + this.ipClient + ":" + this.portClient);
+			
+			String         message = "Serveur RX302 ready/";
 			byte[]         buffer  = message.getBytes(StandardCharsets.US_ASCII);
 			
+			System.out.println("Envoi de mess sur port");
+			
 			DatagramPacket dp = new DatagramPacket(buffer, buffer.length, this.ipClient, this.portClient);
-			System.out.println(this.ipClient + " " + InetAddress.getLocalHost() + " " + this.portClient);
 			ds.send(dp);
 		} catch (SocketException e) {
 			// TODO Auto-generated catch block
